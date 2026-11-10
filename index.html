@@ -2,7 +2,7 @@
 <html lang="ru"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>КНИГА В · LEAN-КАНОН — книга rtynbirf</title>
-<meta name="description" content="Атлас в Lean 4: три поколения формального канона + ST-CKG-мост, zero sorry">
+<meta name="description" content="Формальный канон Атласа в Lean 4 + ST-CKG-мост, machine-verified, zero sorry">
 <style>
 :root{--obs:#0b0b10;--panel:#12121a;--line:#2a2a35;--gold:#d4af37;--gold2:#ffcf6f;
 --gold3:#8a6d1f;--ink:#e8e3d5;--mut:#9a937f}
@@ -12,7 +12,7 @@ background-image:radial-gradient(1200px 500px at 80% -10%,rgba(212,175,55,.09),t
 radial-gradient(900px 400px at 10% 110%,rgba(212,175,55,.06),transparent 60%)}
 .wrap{max-width:1060px;margin:0 auto;padding:56px 28px 80px}
 .kicker{color:var(--gold);letter-spacing:.35em;font-size:12px;text-transform:uppercase}
-h1{font-size:clamp(38px,6vw,64px);letter-spacing:.06em;color:var(--ink);margin:14px 0 6px;font-weight:800}
+h1{font-size:clamp(38px,6vw,64px);letter-spacing:.06em;margin:14px 0 6px;font-weight:800}
 h1 .g{color:var(--gold2);text-shadow:0 0 24px rgba(255,207,111,.25)}
 .tag{color:var(--mut);max-width:760px;font-size:15px}
 .rule{height:2px;background:linear-gradient(90deg,var(--gold),transparent 70%);margin:26px 0 34px;border:0}
@@ -25,7 +25,6 @@ padding:14px 18px;color:var(--ink);text-decoration:none;transition:border-color 
 .ch .ds{color:var(--mut);font-size:13.5px;margin-top:3px}
 .ch .mk{display:inline-block;margin-left:10px;font-size:10px;letter-spacing:.18em;color:var(--obs);
 background:var(--gold);padding:2px 8px;vertical-align:middle;text-transform:uppercase}
-.ch .mk.old{background:transparent;color:var(--mut);border:1px solid var(--line)}
 .ch .arch{float:right;color:var(--mut);font-size:11px;letter-spacing:.06em}
 .svazi{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
 .sv{display:block;border:1px solid var(--line);background:var(--panel);padding:10px 14px;color:var(--ink);
@@ -40,17 +39,17 @@ footer{margin-top:46px;color:var(--mut);font-size:12px;letter-spacing:.05em}
 footer a{color:var(--gold3)}
 ::selection{background:var(--gold);color:var(--obs)}
 </style></head><body><div class="wrap">
-<div class="kicker">КНИГА В · собрано 2026-11-11 · снимки main</div>
+<div class="kicker">КНИГА В · собрано 2026-11-11 · снимки main · чистовик</div>
 <h1>LEAN-КАНОН <span class="g"></span></h1>
-<p class="tag">Атлас в Lean 4: три поколения формального канона + ST-CKG-мост, zero sorry</p>
+<p class="tag">Формальный канон Атласа в Lean 4 + ST-CKG-мост, machine-verified, zero sorry</p>
 <hr class="rule">
 <h2>Оглавление</h2>
-<div class="glavy"><a class="ch" href="glavy/POLYMATH-ATLAS-GESTALT-CANON/"><span class="arch">оригинал-архив ↗</span><span class="nm">POLYMATH-ATLAS-GESTALT-CANON</span><span class="mk">КАНОН</span><div class="ds">Гештальт-Канон: 301 модуль, 553 теоремы — формальный канон Атласа</div></a><a class="ch" href="glavy/polymath-atlas-v107/"><span class="arch">оригинал-архив ↗</span><span class="nm">polymath-atlas-v107</span><span class="mk old">поколение 2</span><div class="ds">Атлас v107.1-FINAL — honest evidence-audit framework</div></a><a class="ch" href="glavy/polymath-atlas/"><span class="arch">оригинал-архив ↗</span><span class="nm">polymath-atlas</span><span class="mk old">поколение 1</span><div class="ds">Operational System Atlas — 7 модулей, стартовое поколение</div></a><a class="ch" href="glavy/polymath-stckg-core/"><span class="arch">оригинал-архив ↗</span><span class="nm">polymath-stckg-core</span><span class="mk">мост</span><div class="ds">ST-CKG → Lean 4 bridge contract: 11 machine-verified theorems</div></a></div>
+<div class="glavy"><a class="ch" href="glavy/POLYMATH-ATLAS-GESTALT-CANON/"><span class="arch">оригинал-архив ↗</span><span class="nm">POLYMATH-ATLAS-GESTALT-CANON</span><span class="mk">КАНОН</span><div class="ds">Гештальт-Канон: 301 модуль, 553 теоремы</div></a><a class="ch" href="glavy/polymath-stckg-core/"><span class="arch">оригинал-архив ↗</span><span class="nm">polymath-stckg-core</span><span class="mk">мост</span><div class="ds">ST-CKG → Lean 4 bridge: 11 machine-verified theorems</div></a></div>
 <h2>Канон</h2>
-<div class="note">**Канон Lean-линии** — глава `POLYMATH-ATLAS-GESTALT-CANON` (301 модуль). `polymath-atlas-v107` и `polymath-atlas` — предыдущие поколения, сохранены для прослеживаемости.</div>
+<div class="note">**Канон Lean-линии** — `POLYMATH-ATLAS-GESTALT-CANON` (301 модуль, 553 теоремы). Предыдущие поколения (`polymath-atlas` — 7 модулей; `polymath-atlas-v107`) снесены из книги по слову Хозяина «оставить чистовое, без черновиков» и живут в архивных оригиналах: https://github.com/rtynbirf/polymath-atlas · https://github.com/rtynbirf/polymath-atlas-v107</div>
 <h2>Связи</h2>
 <div class="svazi"><a class="sv book" href="https://github.com/rtynbirf/ekspozicii/"><b>Книга А · Экспозиции</b></a><a class="sv book" href="https://github.com/rtynbirf/polymath-core/"><b>Книга Б · Полимат-ядро</b></a><a class="sv book" href="https://github.com/rtynbirf/ruvson/"><b>Книга Г · RUVSON</b></a><a class="sv book" href="https://github.com/rtynbirf/domovoy/"><b>Книга Д · Домовой</b></a><a class="sv book" href="https://github.com/rtynbirf/github-doctrine/"><b>Книга Е · Доктрина</b></a><a class="sv book" href="https://github.com/rtynbirf/ekonomika/"><b>Книга Ж · Экономика</b></a><a class="sv book" href="https://github.com/rtynbirf/uace/"><b>Книга З · UACE</b></a><a class="sv star" href="https://github.com/rtynbirf/singulyar/"><b>СИНГУЛЯР · живая вселенная</b></a><a class="sv star" href="https://github.com/rtynbirf/rtynbirf.github.io/"><b>Мега-плеер · титул</b></a><a class="sv star" href="https://github.com/rtynbirf/edinyy-svod/"><b>ЕДИНЫЙ СВОД · каталог</b></a></div>
-<footer>Снимки <b>main</b> от 2026-11-11 · оригиналы архивированы read-only, история сохранена ·
-сводка книг: <a href="https://github.com/rtynbirf/edinyy-svod/blob/main/KNIGI.md">KNIGI.md</a> ·
+<footer>Снимки <b>main</b> от 2026-11-11 · оригиналы архивированы read-only · черновики живут в архиве, не в книге ·
+сводка: <a href="https://github.com/rtynbirf/edinyy-svod/blob/main/KNIGI.md">KNIGI.md</a> ·
 сверстано Полиматом-Мультиагентом</footer>
 </div></body></html>
