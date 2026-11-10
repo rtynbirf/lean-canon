@@ -1,0 +1,383 @@
+{
+  "prototype_name": "POLYMATH-ATLAS AGI Bridge v0.8 (normalized)",
+  "note": "No v0.7 bridge file was present in this repository, so this file is created from the actual Lean sources. Every lean_definition / lean_theorem below is a fully qualified name that exists in the project and compiles without `sorry`.",
+  "lean_project": "RequestProject",
+  "axiom_policy": {
+    "custom_axioms": [],
+    "allowed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "checked_by": "RequestProject/Main.lean (#print axioms block)"
+  },
+  "layers": [
+    {
+      "id": "L1",
+      "title": "Observation streams and liveness",
+      "file": "RequestProject/AdaptiveAgent.lean",
+      "lean_definition": [
+        "PolymathAtlas.AdaptiveAgent.Observation",
+        "PolymathAtlas.AdaptiveAgent.ObservationStream",
+        "PolymathAtlas.AdaptiveAgent.Active",
+        "PolymathAtlas.AdaptiveAgent.LiveAt",
+        "PolymathAtlas.AdaptiveAgent.Live",
+        "PolymathAtlas.AdaptiveAgent.StreamTransformer",
+        "PolymathAtlas.AdaptiveAgent.truncate"
+      ],
+      "lean_theorem": [
+        "PolymathAtlas.AdaptiveAgent.liveAt_of_le",
+        "PolymathAtlas.AdaptiveAgent.live_iff_setOf_active_infinite",
+        "PolymathAtlas.AdaptiveAgent.live_truncate_of_live",
+        "PolymathAtlas.AdaptiveAgent.StreamTransformer.comp_assoc"
+      ]
+    },
+    {
+      "id": "L2",
+      "title": "Variational inference and relative entropy",
+      "file": "RequestProject/AdaptiveAgent.lean",
+      "lean_definition": [
+        "PolymathAtlas.AdaptiveAgent.klDiv",
+        "PolymathAtlas.AdaptiveAgent.VariationalFamily",
+        "PolymathAtlas.AdaptiveAgent.VariationalFamily.complexity",
+        "PolymathAtlas.AdaptiveAgent.VariationalFamily.posteriorDiv",
+        "PolymathAtlas.AdaptiveAgent.KLContinuityBound"
+      ],
+      "lean_theorem": [
+        "PolymathAtlas.AdaptiveAgent.klDiv_self",
+        "PolymathAtlas.AdaptiveAgent.klDiv_nonneg",
+        "PolymathAtlas.AdaptiveAgent.VariationalFamily.complexity_nonneg",
+        "PolymathAtlas.AdaptiveAgent.VariationalFamily.posteriorDiv_nonneg",
+        "PolymathAtlas.AdaptiveAgent.KLContinuityBound.mul_nonneg",
+        "PolymathAtlas.AdaptiveAgent.KLContinuityBound.nonneg_of_pos"
+      ]
+    },
+    {
+      "id": "L3",
+      "title": "Active policy selection by expected free energy",
+      "file": "RequestProject/AdaptiveAgent.lean",
+      "lean_definition": [
+        "PolymathAtlas.AdaptiveAgent.ActivePolicyAgent",
+        "PolymathAtlas.AdaptiveAgent.ActivePolicyAgent.risk",
+        "PolymathAtlas.AdaptiveAgent.ActivePolicyAgent.ambiguity",
+        "PolymathAtlas.AdaptiveAgent.ActivePolicyAgent.efe",
+        "PolymathAtlas.AdaptiveAgent.ActivePolicyAgent.trajectory"
+      ],
+      "lean_theorem": [
+        "PolymathAtlas.AdaptiveAgent.ActivePolicyAgent.efe_nonneg",
+        "PolymathAtlas.AdaptiveAgent.ActivePolicyAgent.efe_foldl_ge_init",
+        "PolymathAtlas.AdaptiveAgent.ActivePolicyAgent.efe_foldl_nonneg_of_init_nonneg",
+        "PolymathAtlas.AdaptiveAgent.ActivePolicyAgent.trajectory_eq_of_fixed"
+      ]
+    },
+    {
+      "id": "L4",
+      "title": "Meta-optimization and fixed points of self-maps",
+      "file": "RequestProject/AdaptiveAgent.lean",
+      "lean_definition": [
+        "PolymathAtlas.AdaptiveAgent.SelfMap",
+        "PolymathAtlas.AdaptiveAgent.Endomap",
+        "PolymathAtlas.AdaptiveAgent.MetaOptimizer"
+      ],
+      "lean_theorem": [
+        "PolymathAtlas.AdaptiveAgent.exists_fixed_point_selfMap",
+        "PolymathAtlas.AdaptiveAgent.exists_fixed_point_of_idempotent",
+        "PolymathAtlas.AdaptiveAgent.not_forall_exists_fixed_point_selfMap"
+      ]
+    },
+    {
+      "id": "L5",
+      "title": "Necessary preconditions",
+      "file": "RequestProject/AdaptiveAgent.lean",
+      "lean_definition": [
+        "PolymathAtlas.AdaptiveAgent.AdaptivePreconditions"
+      ],
+      "lean_theorem": [
+        "PolymathAtlas.AdaptiveAgent.neg_adaptivePreconditions_of_neg_c1",
+        "PolymathAtlas.AdaptiveAgent.neg_adaptivePreconditions_of_neg_c2",
+        "PolymathAtlas.AdaptiveAgent.neg_adaptivePreconditions_of_neg_c3"
+      ]
+    },
+    {
+      "id": "L6",
+      "title": "The adaptive-agent specification",
+      "file": "RequestProject/AdaptiveAgent.lean",
+      "lean_definition": [
+        "PolymathAtlas.AdaptiveAgent.AdaptiveAgentSpec"
+      ],
+      "lean_theorem": [
+        "PolymathAtlas.AdaptiveAgent.AdaptiveAgentSpec.live",
+        "PolymathAtlas.AdaptiveAgent.AdaptiveAgentSpec.live_at",
+        "PolymathAtlas.AdaptiveAgent.AdaptiveAgentSpec.exists_nonneg_bound",
+        "PolymathAtlas.AdaptiveAgent.neg_adaptiveAgentSpec_of_neg_live_at"
+      ]
+    },
+    {
+      "id": "L7",
+      "title": "Reflexive closure",
+      "file": "RequestProject/AdaptiveAgent.lean",
+      "lean_definition": [
+        "PolymathAtlas.AdaptiveAgent.ReflexiveAdaptiveAgent"
+      ],
+      "lean_theorem": [
+        "PolymathAtlas.AdaptiveAgent.ReflexiveAdaptiveAgent.adaptive_agent_spec",
+        "PolymathAtlas.AdaptiveAgent.ReflexiveAdaptiveAgent.adaptive_preconditions",
+        "PolymathAtlas.AdaptiveAgent.ReflexiveAdaptiveAgent.live_at",
+        "PolymathAtlas.AdaptiveAgent.ReflexiveAdaptiveAgent.self_nontrivial",
+        "PolymathAtlas.AdaptiveAgent.ReflexiveAdaptiveAgent.exists_fixed_point_metaUpdate"
+      ]
+    },
+    {
+      "id": "W",
+      "title": "Concrete witness (non-vacuity)",
+      "file": "RequestProject/ExampleAdaptiveAgent.lean",
+      "lean_definition": [
+        "PolymathAtlas.AdaptiveAgent.Demo.pulse",
+        "PolymathAtlas.AdaptiveAgent.Demo.uniformFamily",
+        "PolymathAtlas.AdaptiveAgent.Demo.flipAgent",
+        "PolymathAtlas.AdaptiveAgent.Demo.flipReflexive"
+      ],
+      "lean_theorem": [
+        "PolymathAtlas.AdaptiveAgent.Demo.pulse_live",
+        "PolymathAtlas.AdaptiveAgent.Demo.flipAgent_preconditions",
+        "PolymathAtlas.AdaptiveAgent.Demo.flipAgent_spec",
+        "PolymathAtlas.AdaptiveAgent.Demo.flipReflexive_live_at",
+        "PolymathAtlas.AdaptiveAgent.Demo.flipReflexive_self_nontrivial"
+      ]
+    },
+    {
+      "id": "KM",
+      "title": "Knowledge model kernel (knowledge graph, proof graph)",
+      "file": "RequestProject/Core.lean, RequestProject/ProofGraph.lean",
+      "lean_definition": [
+        "Polymath.KnowledgeObject",
+        "Polymath.ObjectKind",
+        "Polymath.KnowledgeRelation",
+        "Polymath.RelationKind",
+        "Polymath.KnowledgeGraph",
+        "Polymath.ProofGraph",
+        "Polymath.KnowledgeTower",
+        "Polymath.ProofTower"
+      ],
+      "lean_theorem": [
+        "Polymath.KnowledgeGraph.relation_resolves",
+        "Polymath.KnowledgeGraph.exists_foundation",
+        "Polymath.KnowledgeGraph.acyclic_iff_stratifiable",
+        "Polymath.ProofGraph.grounded_trace",
+        "Polymath.ProofGraph.not_grounded_of_circular",
+        "Polymath.KnowledgeGraph.exists_curriculum"
+      ]
+    }
+  ],
+  "rename_log": [
+    {
+      "old": "KGraph",
+      "new": "KnowledgeGraph",
+      "file": "RequestProject/*.lean"
+    },
+    {
+      "old": "PGraph",
+      "new": "ProofGraph",
+      "file": "RequestProject/*.lean"
+    },
+    {
+      "old": "KObj",
+      "new": "KnowledgeObject",
+      "file": "RequestProject/*.lean"
+    },
+    {
+      "old": "KKind",
+      "new": "ObjectKind",
+      "file": "RequestProject/*.lean"
+    },
+    {
+      "old": "Rel",
+      "new": "KnowledgeRelation",
+      "file": "RequestProject/*.lean"
+    },
+    {
+      "old": "RelKind",
+      "new": "RelationKind",
+      "file": "RequestProject/*.lean"
+    },
+    {
+      "old": "Tower",
+      "new": "KnowledgeTower",
+      "file": "RequestProject/Scale.lean"
+    },
+    {
+      "old": "PTower",
+      "new": "ProofTower",
+      "file": "RequestProject/Scale.lean"
+    },
+    {
+      "old": "addObj",
+      "new": "addObject",
+      "file": "RequestProject/Evolution.lean"
+    },
+    {
+      "old": "addRel",
+      "new": "addRelation",
+      "file": "RequestProject/Evolution.lean"
+    },
+    {
+      "old": "toPGraph",
+      "new": "toProofGraph",
+      "file": "RequestProject/ProofGraph.lean"
+    },
+    {
+      "old": "Reactor",
+      "new": "StreamTransformer",
+      "file": "RequestProject/AdaptiveAgent.lean"
+    },
+    {
+      "old": "Compressor",
+      "new": "VariationalFamily",
+      "file": "RequestProject/AdaptiveAgent.lean"
+    },
+    {
+      "old": "Navigator",
+      "new": "ActivePolicyAgent",
+      "file": "RequestProject/AdaptiveAgent.lean"
+    },
+    {
+      "old": "HolographicMonitor",
+      "new": "MetaOptimizer",
+      "file": "RequestProject/AdaptiveAgent.lean"
+    },
+    {
+      "old": "GenesisConditions",
+      "new": "AdaptivePreconditions",
+      "file": "RequestProject/AdaptiveAgent.lean"
+    },
+    {
+      "old": "MinimalIntelligence",
+      "new": "AdaptiveAgentSpec",
+      "file": "RequestProject/AdaptiveAgent.lean"
+    },
+    {
+      "old": "GenesisEvent",
+      "new": "ReflexiveAdaptiveAgent",
+      "file": "RequestProject/AdaptiveAgent.lean"
+    },
+    {
+      "old": "AliveAt",
+      "new": "LiveAt",
+      "file": "RequestProject/AdaptiveAgent.lean"
+    },
+    {
+      "old": "Alive",
+      "new": "Live",
+      "file": "RequestProject/AdaptiveAgent.lean"
+    },
+    {
+      "old": "GenesisOf",
+      "new": "SelfMap",
+      "file": "RequestProject/AdaptiveAgent.lean"
+    },
+    {
+      "old": "Omega_exists",
+      "new": "exists_fixed_point_selfMap",
+      "file": "RequestProject/AdaptiveAgent.lean",
+      "comment": "no longer an axiom: the monotone form is proved (Knaster-Tarski) and the unrestricted form is refuted by not_forall_exists_fixed_point_selfMap"
+    },
+    {
+      "old": "genesis_requires_all_three",
+      "new": "neg_adaptivePreconditions_of_neg_c1",
+      "file": "RequestProject/AdaptiveAgent.lean"
+    },
+    {
+      "old": "efe_is_genesis_threshold",
+      "new": "ActivePolicyAgent.efe_nonneg",
+      "file": "RequestProject/AdaptiveAgent.lean"
+    },
+    {
+      "old": "minimal_intelligence_implies_alive",
+      "new": "AdaptiveAgentSpec.live_at",
+      "file": "RequestProject/AdaptiveAgent.lean"
+    },
+    {
+      "old": "genesis_event_implies_minimal",
+      "new": "ReflexiveAdaptiveAgent.adaptive_agent_spec",
+      "file": "RequestProject/AdaptiveAgent.lean"
+    },
+    {
+      "old": "l7_implies_recursive_capacity",
+      "new": "ReflexiveAdaptiveAgent.self_nontrivial",
+      "file": "RequestProject/AdaptiveAgent.lean"
+    },
+    {
+      "old": "termination_blocks_intelligence",
+      "new": "neg_adaptiveAgentSpec_of_neg_live_at",
+      "file": "RequestProject/AdaptiveAgent.lean"
+    },
+    {
+      "old": "efe_foldl_ge_init",
+      "new": "ActivePolicyAgent.efe_foldl_ge_init",
+      "file": "RequestProject/AdaptiveAgent.lean"
+    },
+    {
+      "old": "efe_nonneg_fold",
+      "new": "ActivePolicyAgent.efe_foldl_nonneg_of_init_nonneg",
+      "file": "RequestProject/AdaptiveAgent.lean"
+    },
+    {
+      "old": "Reactor",
+      "new": "DistinctionDetector",
+      "file": "RequestProject/Gestalt/GenesisEngine.lean"
+    },
+    {
+      "old": "Compressor",
+      "new": "DistinctionFilter",
+      "file": "RequestProject/Gestalt/GenesisEngine.lean"
+    },
+    {
+      "old": "GenesisEvent",
+      "new": "StateSpaceExpansion",
+      "file": "RequestProject/Gestalt/GenesisEngine.lean"
+    },
+    {
+      "old": "Urobouros (module/namespace)",
+      "new": "SelfReference",
+      "file": "RequestProject/Gestalt/SelfReference.lean"
+    },
+    {
+      "old": "urobouros_closure",
+      "new": "methodology_revisits_level",
+      "file": "RequestProject/Gestalt/SelfReference.lean"
+    },
+    {
+      "old": "urobouros_closure_t5Bound",
+      "new": "methodology_revisits_level_within_card",
+      "file": "RequestProject/Gestalt/SelfReference.lean"
+    }
+  ],
+  "gestalt_layer": {
+    "files": [
+      "RequestProject/Gestalt/UCC.lean",
+      "RequestProject/Gestalt/GenesisEngine.lean",
+      "RequestProject/Gestalt/SelfReference.lean",
+      "RequestProject/Gestalt/MetaSkills.lean",
+      "RequestProject/Gestalt/ToolInventory.lean",
+      "RequestProject/Gestalt/AristotleCanon.lean",
+      "RequestProject/Gestalt/CoreBridge.lean"
+    ],
+    "theorems_checked": 68,
+    "sorries": 0,
+    "custom_axioms": 0,
+    "audit_map": "GESTALT_SKELETON.md",
+    "axiom_report": "AXIOMS_REPORT.md",
+    "finite_mirrors": "runtime/gestalt_verification.py",
+    "bridge_theorems": [
+      "PolymathAtlas.Gestalt.CoreBridge.navigatorOfActivePolicyAgent_efe",
+      "PolymathAtlas.Gestalt.CoreBridge.navigatorOfActivePolicyAgent_efe_nonneg",
+      "PolymathAtlas.Gestalt.CoreBridge.navigator_min_efe_eq",
+      "PolymathAtlas.Gestalt.CoreBridge.trace_length",
+      "PolymathAtlas.Gestalt.CoreBridge.efe_trace_nonneg",
+      "PolymathAtlas.Gestalt.CoreBridge.isOmega_of_step_fixed",
+      "PolymathAtlas.Gestalt.CoreBridge.exists_methodology_isOmega",
+      "PolymathAtlas.Gestalt.CoreBridge.reflexiveAdaptiveAgent_drawsDistinction",
+      "PolymathAtlas.Gestalt.CoreBridge.reflexiveAdaptiveAgent_liveAt"
+    ]
+  }
+}

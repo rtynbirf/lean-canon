@@ -1,0 +1,25 @@
+name: СТОРОЖ-СВЕЖЕСТЬ
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # понедельники, 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+concurrency:
+  group: watchdog
+  cancel-in-progress: true
+
+jobs:
+  freshness:
+    name: Пин дома vs мировой край
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - name: Сверка пина дома с релизами Lean
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/freshness_watch.py

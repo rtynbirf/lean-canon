@@ -1,0 +1,33 @@
+name: anchors-verify (якоря-инварианты)
+
+# Волна ×4 · П46 (issue #3): якоря верификации как формальные инварианты.
+# Честный фоллбек Lean: реестр VERIFICATION_ANCHORS.json + проверяющий.
+# lake build недоступен в среде — статусы «proven» не заявляются.
+
+on:
+  push:
+    paths:
+      - "PolymathAtlas/**"
+      - "VERIFICATION_ANCHORS.json"
+      - "scripts/verify_anchors.py"
+      - ".github/workflows/anchors-verify.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  anchors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: '3.12'
+      - name: Сверка реестра якорей с деревом (rc=0)
+        run: python3 scripts/verify_anchors.py
+      - name: Самоиспытание проверяющего
+        run: python3 scripts/verify_anchors.py --selftest
+      - name: Осмотр исходных пломб VERIFICATION_ANCHORS.txt (факты [В]/[О])
+        run: python3 scripts/verify_anchors.py --txt

@@ -1,0 +1,39 @@
+name: ДОКУМЕНТАЦИЯ
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  docs:
+    name: API-документация → GitHub Pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Toolchain и сборка дома (lean-action)
+        uses: leanprover/lean-action@v1
+        with:
+          build: true
+          test: false
+          lint: false
+          use-mathlib-cache: auto
+
+      - name: Сборка и публикация документации (doc-gen4)
+        uses: leanprover-community/docgen-action@main
+        with:
+          lake-package-directory: .
+          # docs/ дома — не Jekyll-сайт (нет Gemfile): build-page=true по умолчанию
+          # ронял прогон на «Could not locate Gemfile» (exit 10). API-доки doc-gen4
+          # собираются как раньше и выкладываются из docs/ без Jekyll-хвоста.
+          build-page: false

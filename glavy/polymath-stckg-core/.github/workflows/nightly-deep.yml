@@ -1,0 +1,108 @@
+name: "NIGHTLY · deep independent battery"
+
+# Once a day the contract is re-verified with INDEPENDENT implementations,
+# not just the toolchain that built it (the Mathlib-style cron pattern):
+#
+#   1. nanoda        — a completely independent Lean 4 type checker written
+#                      in Rust; re-verifies every declaration is well-typed.
+#                      sorry forbidden (nanoda-allow-sorry: false).
+#   2. leanchecker   — re-checks every module of the full environment
+#                      (project + Mathlib) with the bundled kernel checker.
+#   3. axiom-audit   — kernel axiom surface audit (allowlist = Mathlib defaults).
+#   4. axiom_gate.py — #print axioms policy for the 11 bridge theorems.
+#
+# Failure files an issue automatically. Heavy checks live here so that
+# push-CI stays fast.
+
+on:
+  schedule:
+    - cron: "0 3 * * *" # daily 03:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: nightly-deep
+  cancel-in-progress: false
+
+jobs:
+  deep:
+    name: "nanoda + leanchecker + axiom-audit + precision"
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Build oleans (Mathlib cache)
+        uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee # v1.7.1
+        with:
+          auto-config: false
+          build: true
+          test: false
+          lint: false
+          use-mathlib-cache: true
+
+      # HARD GATES FIRST — their results must never be skipped due to a
+      # failure of the experimental checker below.
+      - name: "leanchecker — kernel re-check of every module (hard gate)"
+        uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee # v1.7.1
+
+        with:
+          auto-config: false
+          leanchecker: true
+        env:
+          LEAN_NUM_THREADS: "2"
+
+      - name: "axiom-audit — kernel axiom surface (hard gate, v0.1.2, SHA-pinned)"
+        run: |
+          set -euo pipefail
+          git clone -q --depth 1 --branch v0.1.2 https://github.com/leanprover-community/axiom-audit /tmp/axiom-audit
+          git -C /tmp/axiom-audit fetch -q --unshallow 2>/dev/null || true
+          git -C /tmp/axiom-audit checkout -q 46024e005996495c65ef609368e11ab39c4222e3 # v0.1.2
+          ( cd /tmp/axiom-audit && elan run leanprover/lean4:v4.28.0 lake build )
+          lake env /tmp/axiom-audit/.lake/build/bin/axiom-audit \
+            --root RequestProject \
+            --modules-from RequestProject \
+            --allow propext,Classical.choice,Quot.sound \
+            --json > axiom-audit.json
+          echo "axiom-audit: PASS — axiom surface within Mathlib defaults"
+
+      - name: "axiom precision — bridge theorems policy (hard gate)"
+        run: python3 scripts/axiom_gate.py
+
+      # EXPERIMENTAL (best-effort): nanoda — independent Rust type checker.
+      # continue-on-error until upstream fix: run_nanoda.sh detects the module
+      # name only from a [package] section and cannot read top-level
+      # `name = "..."` TOML lakefiles (leanprover/lean-action issue filed).
+      # The contract does not depend on this step; leanchecker above is the
+      # independent kernel gate.
+      - name: "nanoda — independent Rust type checker (experimental, sorry forbidden)"
+        continue-on-error: true
+        uses: leanprover/lean-action@ba3fdfe5c4476c925da13bf11a005ddb47e47aee # v1.7.1
+        with:
+          auto-config: false
+          nanoda: true
+          nanoda-allow-sorry: false
+
+      - name: "File an issue when the battery fails"
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create gate-failure --color cf222e --description "NIGHTLY deep battery failure" --force || true
+          gh issue create \
+            --title "NIGHTLY deep battery FAILED @ $(git rev-parse --short HEAD)" \
+            --label gate-failure \
+            --body "The NIGHTLY deep independent battery failed.
+
+          * Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          * Commit: ${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}
+          * Trigger: ${{ github.event_name }}
+
+          The bridge contract still holds for the last green push — investigate
+          whether this is a real integrity regression, a toolchain/cache drift,
+          or an independent-checker compatibility issue (nanoda is experimental
+          and best-effort; leanchecker and axiom-audit are the hard gates)."

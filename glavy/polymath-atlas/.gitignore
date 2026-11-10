@@ -1,0 +1,32 @@
+# === NEVER commit secrets (iron rule of this repo) ===
+*token*
+*.token
+*.pem
+*.key
+.credentials
+.env
+.env.*
+!**/.env.example
+
+# === Lean / Lake build artifacts ===
+.build/
+.lake/
+build/
+*.olean
+*.ilean
+*.trace
+lake-packages/
+
+# === OS / editor noise ===
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# === Node ===
+node_modules/
+package-lock.json

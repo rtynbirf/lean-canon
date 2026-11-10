@@ -1,0 +1,36 @@
+# polymath-atlas-v107
+> POLYMATH-ATLAS v107.1-FINAL — honest evidence-audit framework in Lean 4. VERIFIED ENGINEERING FRAMEWORK (prototype), not a theorem prover. Open verification protocol in README.
+
+Автоген 2026-11-08 · источник: живой GitHub API (номера и файлы не руками) · владелец rtynbirf · ветка `main`
+
+## Мембрана
+- README.md — для человека (POLYMATH-ATLAS v107.1-FINAL)
+- AGENTS.md — есть
+- LICENSE — MIT
+- topics: atlas, engineering-framework, evidence-audit, formal-methods, lean, lean4, mathlib, research-verification, verification
+
+## Карта корня
+- .github/
+- .gitignore
+- AGENTS.md
+- CODEOWNERS
+- CODE_OF_CONDUCT.md
+- CONTRIBUTING.md
+- LICENSE
+- PULSE.md
+- PolymathAtlas/
+- README.md
+- SECURITY.md
+- VERIFICATION_ANCHORS.txt
+- archive/
+- install_and_verify.sh
+- lakefile.lean
+- … ещё 1
+
+## CI
+- workflow: self-audit
+
+## Ссылки
+- [GitHub](https://github.com/rtynbirf/polymath-atlas-v107)
+- [README](https://github.com/rtynbirf/polymath-atlas-v107/blob/main/README.md)
+- [raw llms.txt](https://raw.githubusercontent.com/rtynbirf/polymath-atlas-v107/main/llms.txt)

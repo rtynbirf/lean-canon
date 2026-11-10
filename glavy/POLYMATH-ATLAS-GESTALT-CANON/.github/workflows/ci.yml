@@ -1,0 +1,53 @@
+name: CANON-AUTOMATON
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: canon-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  canon:
+    name: Сборка + уставный аудит
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: G-build — сборка дома (все модули, Mathlib-кэш)
+        uses: leanprover/lean-action@v1
+        with:
+          build: true
+          test: false
+          lint: false
+          use-mathlib-cache: auto
+
+      - name: Генерация полного свипа (каждый модуль канона)
+        run: python3 scripts/gen_sweep.py > scripts/AxiomSweepGenerated.lean
+
+      - name: G-sweep — аксиомный след каждой константы ⊆ {propext, choice, Quot.sound}
+        run: |
+          set -o pipefail
+          lake env lean scripts/AxiomSweepGenerated.lean 2>&1 | tee sweep.log
+          grep -q "CANON-SWEEP OK" sweep.log
+
+      - name: G-report — текстовые гейты Устава + канонический отчёт
+        run: python3 scripts/charter_report.py
+
+      - name: G-mirror — вычислимые свидетели Gestalt
+        run: |
+          set -o pipefail
+          python3 runtime/gestalt_verification.py | tail -n 5
+
+      - name: Артефакт отчёта дома
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: canon-report
+          path: docs/auto/
