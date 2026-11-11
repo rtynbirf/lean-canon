@@ -4,6 +4,15 @@
   <img src="banner.png" width="100%" alt="Штандарт lean-canon: обсидиан и расплавленное золото, кузня rtynbirf" />
 </div>
 
+<!--ФОРЖ:МУЗА:НАЧАЛО-->
+<div align="center">
+  <img src="repo-muse.svg" width="100%" alt="Муза lean-canon: картина кузни ПОЛИМАТ, раунд 8" />
+  <br/>
+  <img src="forge-divider.svg" width="62%" alt="разделитель кузни ПОЛИМАТ" />
+</div>
+<!--ФОРЖ:МУЗА:КОНЕЦ-->
+
+
 
 > Собрана 2026-11-11 из 2 репозиториев аккаунта rtynbirf. Каждая глава — снимок `main` оригинала на дату сборки (см. `PROVENANCE.md` внутри главы). Оригиналы архивированы read-only, история коммитов сохранена там.
 
@@ -27,3 +36,10 @@
 ## Канон
 
 **Канон Lean-линии** — `POLYMATH-ATLAS-GESTALT-CANON` (301 модуль, 553 теоремы). Предыдущие поколения (`polymath-atlas` — 7 модулей; `polymath-atlas-v107`) снесены из книги по слову Хозяина «оставить чистовое, без черновиков» и живут в архивных оригиналах: https://github.com/rtynbirf/polymath-atlas · https://github.com/rtynbirf/polymath-atlas-v107
+
+<!--ФОРЖ:ПОДВАЛ-->
+---
+
+<div align="center">
+  <sub>◆ картина и штандарт — ручная ковка <a href="https://github.com/rtynbirf">КУЗНИ ПОЛИМАТ</a> · ЧЕЛОВЕК=АККАУНТ=PID1 ◆</sub>
+</div>
