@@ -6,11 +6,12 @@
 
 <!--ФОРЖ:МУЗА:НАЧАЛО-->
 <div align="center">
-  <img src="repo-muse.svg" width="100%" alt="Муза lean-canon: картина кузни ПОЛИМАТ, раунд 8" />
+  <img src="repo-muse.svg" width="100%" alt="Муза lean-canon: мастерская AGNES MARTIN, кузня ПОЛИМАТ, раунд 11" />
   <br/>
-  <img src="forge-divider.svg" width="62%" alt="разделитель кузни ПОЛИМАТ" />
+  <img src="forge-divider.svg" width="62%" alt="делитель мастерской AGNES MARTIN" />
 </div>
 <!--ФОРЖ:МУЗА:КОНЕЦ-->
+
 
 
 
