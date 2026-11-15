@@ -38,6 +38,14 @@
 
 **Канон Lean-линии** — `POLYMATH-ATLAS-GESTALT-CANON` (301 модуль, 553 теоремы). Предыдущие поколения (`polymath-atlas` — 7 модулей; `polymath-atlas-v107`) снесены из книги по слову Хозяина «оставить чистовое, без черновиков» и живут в архивных оригиналах: https://github.com/rtynbirf/polymath-atlas · https://github.com/rtynbirf/polymath-atlas-v107
 
+## Как читать книгу
+
+- Каждая глава (`glavy/<глава>/`) — снимок `main` оригинала на дату сборки; происхождение и SHA снимка — в `PROVENANCE.md` внутри главы.
+- Правки — только в оригиналах (ссылки в оглавлении выше); оригиналы архивированы read-only, история коммитов сохранена в них.
+- Ядро дома — [polymath-core](https://github.com/rtynbirf/polymath-core); живой реестр аккаунта — [index](https://github.com/rtynbirf/index).
+- Онлайн-версия тома: https://rtynbirf.github.io/lean-canon/
+- Лицензия тома — MIT ([LICENSE](LICENSE)); у каждой главы — лицензия её оригинала.
+
 <!--ФОРЖ:ПОДВАЛ-->
 ---
 
