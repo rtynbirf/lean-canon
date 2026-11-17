@@ -2,7 +2,7 @@
  "hologram": 1,
  "root": "c223bd4a2f6a56783c1fbdb1b1f671fa61c3150ecf320c82796ea5763043a696",
  "n": 73,
- "storage": 68,
+ "storage": 36,
  "r": 3,
  "self": {
   "name": "lean-canon",
@@ -306,6 +306,12 @@
  ],
  "flesh": [
   {
+   "name": "combain-v2",
+   "desc": "COMBAIN v2 — self-hosted messenger",
+   "lang": "JavaScript",
+   "cluster": ""
+  },
+  {
    "name": "domovenok",
    "desc": "🏠 Командный центр дома: задачи, комнаты, расходы и индекс порядка. Next.js 16 · TypeScript · Prisma · Vitest · зелёный CI",
    "lang": "TypeScript",
@@ -340,6 +346,12 @@
    "desc": "🐝 Живой репозиторий-организм: экипаж автономных AI-агентов в GitHub Actions — Copilot, локальный GGUF-нейромозг или инстинкты. Открой issue — экипаж ответит.",
    "lang": "Python",
    "cluster": "SWARM"
+  },
+  {
+   "name": "polymath-tools-atlas",
+   "desc": "ПОЛИМАТ · TOOLS-ATLAS — каталог 665 AI-инструментов по контракту ГОЛОГРАММА v1 (6 слоёв, 3 статуса, закон цепочек). 147 local vs 151 cloud. 3 конфигурации железа. 12 софт-компонентов. Пломбы SHA256. П",
+   "lang": "HTML",
+   "cluster": "ATLASES"
   },
   {
    "name": "rtynbirf",
