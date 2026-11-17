@@ -2,6 +2,7 @@
  "hologram": 1,
  "root": "c223bd4a2f6a56783c1fbdb1b1f671fa61c3150ecf320c82796ea5763043a696",
  "n": 73,
+ "storage": 68,
  "r": 3,
  "self": {
   "name": "lean-canon",
@@ -314,6 +315,12 @@
    "name": "ekspozicii",
    "desc": "КНИГА ЭКСПОЗИЦИЙ",
    "lang": "HTML",
+   "cluster": ""
+  },
+  {
+   "name": "invariant-manifest",
+   "desc": "МАНИФЕСТ ИНВАРИАНТА · FORK 3 · v0.2.3 · CONDITIONAL PASS · seed 7170 · stdlib-only · порождение должно мочь быть опровергнутым",
+   "lang": "Python",
    "cluster": ""
   },
   {
