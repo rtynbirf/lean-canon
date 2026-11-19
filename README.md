@@ -1,3 +1,9 @@
+<div align="center">
+
+<a href="https://github.com/rtynbirf/lean-canon"><img src="banner.png" width="100%" alt="lean-canon — штандарт мастерской в каноне ORNAMENTAL MYTHO-REALISM"></a>
+
+</div>
+
 # КНИГА LEAN-КАНОНА
 
 <div align="center">
@@ -19,7 +25,7 @@
 
 | ФАЙЛОВ | ПАПОК | КОММИТОВ | ОБНОВЛЕНО | РЕЛИЗОВ |
 |---:|---:|---:|---|---:|
-| 551 | 41 | 92 | 2026-11-19 | 0 |
+| 551 | 41 | 93 | 2026-11-19 | 0 |
 <!--ФОРЖ:ПАСПОРТ:КОНЕЦ-->
 
 
