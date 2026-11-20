@@ -39,8 +39,8 @@
 
 | Глава | Источник | Файлов | Коммитов в ориг. | Снимок |
 |---|---|---|---|---|
-| [POLYMATH-ATLAS-GESTALT-CANON](glavy/POLYMATH-ATLAS-GESTALT-CANON/) | [оригинал](https://github.com/rtynbirf/POLYMATH-ATLAS-GESTALT-CANON) | 358 | 15 | `489debe` |
-| [polymath-stckg-core](glavy/polymath-stckg-core/) | [оригинал](https://github.com/rtynbirf/polymath-stckg-core) | 161 | 23 | `f41d4e1` |
+| [POLYMATH-ATLAS-GESTALT-CANON](https://github.com/rtynbirf/lean-canon/tree/main/glavy/POLYMATH-ATLAS-GESTALT-CANON) | [оригинал](https://github.com/rtynbirf/POLYMATH-ATLAS-GESTALT-CANON) | 358 | 15 | `489debe` |
+| [polymath-stckg-core](https://github.com/rtynbirf/lean-canon/tree/main/glavy/polymath-stckg-core) | [оригинал](https://github.com/rtynbirf/polymath-stckg-core) | 161 | 23 | `f41d4e1` |
 
 ## О чём эта книга
 
