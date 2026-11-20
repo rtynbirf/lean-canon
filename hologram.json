@@ -1,8 +1,8 @@
 {
  "hologram": 1,
- "root": "f9cae3a874a9064bc1ccba9db8e0255366799943b735f2a8be5b259b79316d23",
+ "root": "4bcb8a068871f9158f688c6941bf4b381477a19c0c45283c73811c92000edb94",
  "n": 79,
- "storage": 44,
+ "storage": 74,
  "r": 3,
  "self": {
   "name": "lean-canon",
@@ -109,7 +109,7 @@
   },
   {
    "name": "global-practice-atlas",
-   "hash": "a67f05603d13bf1c7da83d003c8bc9e48ea60dd0e166e1fd2eea58b60f9dd304"
+   "hash": "420b94983834f6bc6de962c180368b34a79340d2a0e638eeeddc040fd7717feb"
   },
   {
    "name": "global-video-platforms-registry",
@@ -330,12 +330,6 @@
  ],
  "flesh": [
   {
-   "name": "combain-v2",
-   "desc": "COMBAIN v2 — self-hosted messenger",
-   "lang": "JavaScript",
-   "cluster": ""
-  },
-  {
    "name": "domovenok",
    "desc": "🏠 Командный центр дома: задачи, комнаты, расходы и индекс порядка. Next.js 16 · TypeScript · Prisma · Vitest · зелёный CI",
    "lang": "TypeScript",
@@ -370,12 +364,6 @@
    "desc": "🐝 Живой репозиторий-организм: экипаж автономных AI-агентов в GitHub Actions — Copilot, локальный GGUF-нейромозг или инстинкты. Открой issue — экипаж ответит.",
    "lang": "Python",
    "cluster": "SWARM"
-  },
-  {
-   "name": "polymath-tools-atlas",
-   "desc": "ПОЛИМАТ · TOOLS-ATLAS — каталог 665 AI-инструментов по контракту ГОЛОГРАММА v1 (6 слоёв, 3 статуса, закон цепочек). 147 local vs 151 cloud. 3 конфигурации железа. 12 софт-компонентов. Пломбы SHA256. П",
-   "lang": "HTML",
-   "cluster": "ATLASES"
   },
   {
    "name": "rtynbirf",
