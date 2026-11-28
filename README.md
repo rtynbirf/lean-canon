@@ -4,12 +4,6 @@
 
 </div>
 
-# КНИГА LEAN-КАНОНА
-
-<div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/rtynbirf/lean-canon@main/banner.png" width="100%" alt="Штандарт lean-canon: обсидиан и расплавленное золото, кузня rtynbirf" />
-</div>
-
 <!--ФОРЖ:МУЗА:НАЧАЛО-->
 <div align="center">
   <img src="https://cdn.jsdelivr.net/gh/rtynbirf/lean-canon@main/repo-muse.svg" width="100%" alt="Муза lean-canon: мастерская AGNES MARTIN, кузня ПОЛИМАТ, раунд 12 · REVE=РЕВО" />
@@ -20,13 +14,33 @@
 
 <!--ФОРЖ:ПАСПОРТ:НАЧАЛО-->
 <div align="center">
-  <img src="revo-page.svg" width="100%" alt="РЕВО-паспорт страницы lean-canon в каноне ORNAMENTAL MYTHO-REALISM: орнаментальная решётка, медальон-миф, строение файлов, лексикон — по фактическому контенту" />
+  <img src="revo-page.svg" width="100%" alt="РЕВО-паспорт страницы lean-canon №4 в каноне ORNAMENTAL MYTHO-REALISM: орнаментальная решётка, медальон-миф, строение файлов, лексикон — по фактическому контенту" />
 </div>
 
 | ФАЙЛОВ | ПАПОК | КОММИТОВ | ОБНОВЛЕНО | РЕЛИЗОВ |
 |---:|---:|---:|---|---:|
-| 561 | 42 | 155 | 2026-11-28 | 0 |
+| 561 | 43 | 1 | 2026-11-28 | 1 |
 <!--ФОРЖ:ПАСПОРТ:КОНЕЦ-->
+
+# lean-canon
+
+<p align="center"><img src="https://cdn.jsdelivr.net/gh/rtynbirf/lean-canon@main/.github/social-preview.png" alt="lean-canon" width="100%"></p>
+
+<div align="center">
+
+<a href="https://github.com/rtynbirf/lean-canon"><img src="banner.png" width="100%" alt="lean-canon — штандарт мастерской в каноне ORNAMENTAL MYTHO-REALISM"></a>
+
+</div>
+
+# КНИГА LEAN-КАНОНА
+
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/rtynbirf/lean-canon@main/banner.png" width="100%" alt="Штандарт lean-canon: обсидиан и расплавленное золото, кузня rtynbirf" />
+</div>
+
+
+
+
 
 
 
